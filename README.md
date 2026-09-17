@@ -49,9 +49,9 @@ switch on. That is exactly the failure the window exists to prevent.
 every seasonal rule in `globals.css` is scoped under that attribute. Outside
 the window not one rule applies.
 
-Verified rather than assumed — with the kill switch set, the button computes
-back to brand purple `rgb(77,47,176)`, no lockup renders, and the logo filter
-is `none`.
+Verified rather than assumed — the primary button computes to brand purple
+`rgb(77,47,176)` in both states, and with the kill switch set no lockup renders
+and the logo filter is `none`.
 
 | Surface | Inside the window |
 |---|---|
@@ -59,13 +59,15 @@ is `none`.
 | Backdrop | Authenticity illustration (family tree + DNA) at 7%, grid frame with corner keys |
 | Lockup | `عزّنا بطبعنا` top-left — guideline p13 puts the logo in a **corner** for digital, never centred |
 | Foot | Sadu weave band |
-| Buttons, links, focus rings, chips | Saudi green |
 | MoonTech wordmark | Reversed to white via CSS filter |
-| The form itself | Unchanged |
+| Back link | Lightened — it sits on the dark ground, so this is legibility, not accent |
+| **The card interior** | **Unchanged — buttons, links, focus rings and chips stay brand purple** |
 
-The form stays light and familiar on purpose. The guideline asks for the
-identity in the layout, not for every control to be restyled — and a sign-in
-screen is the wrong place to make people re-learn the UI.
+The seasonal identity lives entirely in the **field around the card**; the card
+itself is untouched. The guideline asks for the identity in the layout, not for
+every control to be restyled — and the primary action should stay the colour
+people already recognise. A green control inside a purple card reads as a bug,
+not a theme.
 
 ## Colours
 
