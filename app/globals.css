@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  color: #191234;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-figtree), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+input {
+  font: inherit;
+}
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Saudi National Day — seasonal overrides.                            */
+/*                                                                      */
+/* Everything is scoped to [data-snd="on"], which AuthShell sets only    */
+/* inside the date window (app/theme/snd.ts). Outside it, not one rule   */
+/* here applies — so the theme needs no revert PR, and the default look  */
+/* is provably untouched.                                               */
+/* ------------------------------------------------------------------ */
+
+/* Primary action turns Saudi green. */
+[data-snd="on"] .snd-primary:not(:disabled) {
+  background-color: #008849;
+  box-shadow: 0 10px 24px -12px rgba(0, 136, 73, 0.8);
+}
+[data-snd="on"] .snd-primary:not(:disabled):hover {
+  background-color: #00713c;
+}
+
+/* Links and text buttons follow. */
+[data-snd="on"] .snd-link {
+  color: #008849;
+}
+[data-snd="on"] .snd-link:hover {
+  color: #00713c;
+}
+
+/* Back link sits on the dark field, not on the card. */
+[data-snd="on"] .snd-back {
+  color: rgba(244, 251, 247, 0.72);
+}
+[data-snd="on"] .snd-back:hover {
+  color: #ffffff;
+}
+
+/* Fields and OTP boxes take the green focus state. */
+[data-snd="on"] .snd-field:focus,
+[data-snd="on"] .snd-field:focus-within,
+[data-snd="on"] .snd-otp:focus {
+  border-color: #008849;
+  box-shadow: 0 0 0 2px rgba(0, 136, 73, 0.18);
+}
+
+/* Selected region chips. */
+[data-snd="on"] .snd-chip[aria-pressed="true"] {
+  border-color: #008849;
+  background-color: rgba(0, 136, 73, 0.05);
+  box-shadow: 0 0 0 1px rgba(0, 136, 73, 0.3);
+}
+[data-snd="on"] .snd-chip-tick {
+  background-color: #008849;
+}
+
+[data-snd="on"] .snd-rocket {
+  color: #008849;
+}
+
+/* The MoonTech wordmark ships as navy artwork; reverse it out on the dark
+   field rather than shipping a second file. */
+[data-snd="on"] .snd-logo {
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
